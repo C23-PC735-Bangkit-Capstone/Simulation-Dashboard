@@ -6,6 +6,7 @@ import Button from '../CTAButton.vue'
   <div class="container">
     <div class="text">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <slot name="text"></slot>
     </div>
     <Button route="/problem">
@@ -16,6 +17,13 @@ import Button from '../CTAButton.vue'
     </div>
     <Button text="Ya, saya bersedia" route="/problem"></Button>
 >>>>>>> 64b84e9 (init)
+=======
+      <slot name="text"></slot>
+    </div>
+    <Button route="/problem">
+      <template v-slot:content>{{ action }}</template>
+    </Button>
+>>>>>>> 03d63c3 (Tidying components)
   </div>
 </template>
 
@@ -23,10 +31,14 @@ import Button from '../CTAButton.vue'
 export default {
   props: {
 <<<<<<< HEAD
+<<<<<<< HEAD
     action: {
 =======
     text: {
 >>>>>>> 64b84e9 (init)
+=======
+    action: {
+>>>>>>> 03d63c3 (Tidying components)
       type: String,
       required: true
     }
@@ -44,9 +56,13 @@ export default {
   width: 100%;
   background-color: #1d3932;
 <<<<<<< HEAD
+<<<<<<< HEAD
   padding: 75px 20px;
 =======
 >>>>>>> 64b84e9 (init)
+=======
+  padding: 75px 20px;
+>>>>>>> 03d63c3 (Tidying components)
   // border: 1px solid red;
 }
 .text {

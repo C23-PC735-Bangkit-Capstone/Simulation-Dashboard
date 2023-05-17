@@ -2,15 +2,20 @@
   <div class="container">
     <div class="text">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <slot name="content"></slot>
 =======
       {{ text }}
 >>>>>>> 64b84e9 (init)
+=======
+      <slot name="content"></slot>
+>>>>>>> 03d63c3 (Tidying components)
     </div>
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 <<<<<<< HEAD
 export default {}
 =======
@@ -23,6 +28,9 @@ export default {
   }
 }
 >>>>>>> 64b84e9 (init)
+=======
+export default {}
+>>>>>>> 03d63c3 (Tidying components)
 </script>
 
 <style lang="scss" scoped>
@@ -34,6 +42,7 @@ export default {
   width: 100%;
   background-color: #fafafa;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 .text {
   max-width: 700px;
@@ -42,6 +51,11 @@ export default {
 }
 .text {
 >>>>>>> 64b84e9 (init)
+=======
+}
+.text {
+  max-width: 700px;
+>>>>>>> 03d63c3 (Tidying components)
   text-align: center;
   color: var(--vt-c-text-light-1);
   font-size: 1rem;

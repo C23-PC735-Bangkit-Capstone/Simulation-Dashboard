@@ -3,19 +3,27 @@
     <div class="image-side">
       <div class="image-frame">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <img :src="imageResized" :alt="imageAlt" class="image" />
 =======
         <img :src="imageSrc" :alt="imageAlt" class="image" />
 >>>>>>> 64b84e9 (init)
+=======
+        <img :src="imageResized" :alt="imageAlt" class="image" />
+>>>>>>> 03d63c3 (Tidying components)
       </div>
     </div>
     <div class="text-side">
       <div class="text">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <slot name="content"></slot>
 =======
         {{ introText }}
 >>>>>>> 64b84e9 (init)
+=======
+        <slot name="content"></slot>
+>>>>>>> 03d63c3 (Tidying components)
       </div>
     </div>
   </div>
@@ -32,6 +40,9 @@ export default {
       type: String,
       required: true
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 03d63c3 (Tidying components)
     }
   },
   data() {
@@ -59,12 +70,15 @@ export default {
       } else {
         return this.imageSrc + '-small.png'
       }
+<<<<<<< HEAD
 =======
     },
     introText: {
       type: String,
       required: true
 >>>>>>> 64b84e9 (init)
+=======
+>>>>>>> 03d63c3 (Tidying components)
     }
   }
 }
@@ -91,6 +105,7 @@ export default {
   display: flex;
   justify-content: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
   align-items: center;
   border-radius: 20px;
   overflow: hidden;
@@ -101,11 +116,19 @@ export default {
 =======
   align-items: end;
   width: 100%;
+=======
+  align-items: center;
+>>>>>>> 03d63c3 (Tidying components)
   border-radius: 20px;
+  overflow: hidden;
   background-color: #d9d9d9;
 }
 .image {
+<<<<<<< HEAD
 >>>>>>> 64b84e9 (init)
+=======
+  display: flex;
+>>>>>>> 03d63c3 (Tidying components)
   max-width: 100%;
   max-height: 100%;
 }
@@ -122,9 +145,13 @@ export default {
 
 .text {
 <<<<<<< HEAD
+<<<<<<< HEAD
   max-width: 700px;
 =======
 >>>>>>> 64b84e9 (init)
+=======
+  max-width: 700px;
+>>>>>>> 03d63c3 (Tidying components)
   text-align: center;
   font-size: 1rem;
 }
