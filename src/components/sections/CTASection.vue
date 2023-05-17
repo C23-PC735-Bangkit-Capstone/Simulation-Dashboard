@@ -5,16 +5,18 @@ import Button from '../CTAButton.vue'
 <template>
   <div class="container">
     <div class="text">
-      {{ text }}
+      <slot name="text"></slot>
     </div>
-    <Button text="Ya, saya bersedia" route="/problem"></Button>
+    <Button route="/problem">
+      <template v-slot:content>{{ action }}</template>
+    </Button>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    text: {
+    action: {
       type: String,
       required: true
     }
@@ -31,6 +33,7 @@ export default {
   min-height: 200px;
   width: 100%;
   background-color: #1d3932;
+  padding: 75px 20px;
   // border: 1px solid red;
 }
 .text {

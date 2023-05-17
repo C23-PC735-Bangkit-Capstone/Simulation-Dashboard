@@ -2,12 +2,12 @@
   <div class="container">
     <div class="image-side">
       <div class="image-frame">
-        <img :src="imageSrc" :alt="imageAlt" class="image" />
+        <img :src="imageResized" :alt="imageAlt" class="image" />
       </div>
     </div>
     <div class="text-side">
       <div class="text">
-        {{ introText }}
+        <slot name="content"></slot>
       </div>
     </div>
   </div>
@@ -23,10 +23,33 @@ export default {
     imageAlt: {
       type: String,
       required: true
-    },
-    introText: {
-      type: String,
-      required: true
+    }
+  },
+  data() {
+    return {
+      screenWidth: window.innerWidth
+    }
+  },
+  created() {
+    window.addEventListener('resize', this.handleResize)
+  },
+  unmounted() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+  methods: {
+    handleResize() {
+      this.screenWidth = window.innerWidth
+    }
+  },
+  computed: {
+    imageResized() {
+      if (this.screenWidth >= 1024) {
+        return this.imageSrc + '.png'
+      } else if (this.screenWidth >= 768) {
+        return this.imageSrc + '-medium.png'
+      } else {
+        return this.imageSrc + '-small.png'
+      }
     }
   }
 }
@@ -52,12 +75,13 @@ export default {
 .image-frame {
   display: flex;
   justify-content: center;
-  align-items: end;
-  width: 100%;
+  align-items: center;
   border-radius: 20px;
+  overflow: hidden;
   background-color: #d9d9d9;
 }
 .image {
+  display: flex;
   max-width: 100%;
   max-height: 100%;
 }
@@ -73,6 +97,7 @@ export default {
 }
 
 .text {
+  max-width: 700px;
   text-align: center;
   font-size: 1rem;
 }

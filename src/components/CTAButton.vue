@@ -1,7 +1,7 @@
 <template>
   <div class="button">
     <router-link :to="route">
-      <button>{{ text }}</button>
+      <button><slot name="content"></slot></button>
     </router-link>
   </div>
 </template>
@@ -10,10 +10,6 @@
 export default {
   props: {
     route: {
-      type: String,
-      required: true
-    },
-    text: {
       type: String,
       required: true
     }
