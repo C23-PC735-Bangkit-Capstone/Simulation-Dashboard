@@ -2,12 +2,20 @@
   <div class="container">
     <div class="image-side">
       <div class="image-frame">
+<<<<<<< HEAD
         <img :src="imageResized" :alt="imageAlt" class="image" />
+=======
+        <img :src="imageSrc" :alt="imageAlt" class="image" />
+>>>>>>> 64b84e9 (init)
       </div>
     </div>
     <div class="text-side">
       <div class="text">
+<<<<<<< HEAD
         <slot name="content"></slot>
+=======
+        {{ introText }}
+>>>>>>> 64b84e9 (init)
       </div>
     </div>
   </div>
@@ -23,6 +31,7 @@ export default {
     imageAlt: {
       type: String,
       required: true
+<<<<<<< HEAD
     }
   },
   data() {
@@ -50,6 +59,12 @@ export default {
       } else {
         return this.imageSrc + '-small.png'
       }
+=======
+    },
+    introText: {
+      type: String,
+      required: true
+>>>>>>> 64b84e9 (init)
     }
   }
 }
@@ -75,6 +90,7 @@ export default {
 .image-frame {
   display: flex;
   justify-content: center;
+<<<<<<< HEAD
   align-items: center;
   border-radius: 20px;
   overflow: hidden;
@@ -82,6 +98,14 @@ export default {
 }
 .image {
   display: flex;
+=======
+  align-items: end;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #d9d9d9;
+}
+.image {
+>>>>>>> 64b84e9 (init)
   max-width: 100%;
   max-height: 100%;
 }
@@ -97,7 +121,10 @@ export default {
 }
 
 .text {
+<<<<<<< HEAD
   max-width: 700px;
+=======
+>>>>>>> 64b84e9 (init)
   text-align: center;
   font-size: 1rem;
 }
