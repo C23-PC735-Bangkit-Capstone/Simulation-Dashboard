@@ -2,14 +2,10 @@
   <div class="button">
     <router-link :to="route">
 <<<<<<< HEAD
-<<<<<<< HEAD
       <button><slot name="content"></slot></button>
 =======
       <button>{{ text }}</button>
 >>>>>>> 64b84e9 (init)
-=======
-      <button><slot name="content"></slot></button>
->>>>>>> 03d63c3 (Tidying components)
     </router-link>
   </div>
 </template>
@@ -21,15 +17,12 @@ export default {
       type: String,
       required: true
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
     },
     text: {
       type: String,
       required: true
 >>>>>>> 64b84e9 (init)
-=======
->>>>>>> 03d63c3 (Tidying components)
     }
   }
 }
