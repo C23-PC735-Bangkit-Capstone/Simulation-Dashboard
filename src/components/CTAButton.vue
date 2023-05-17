@@ -1,11 +1,7 @@
 <template>
   <div class="button">
     <router-link :to="route">
-<<<<<<< HEAD
       <button><slot name="content"></slot></button>
-=======
-      <button>{{ text }}</button>
->>>>>>> 64b84e9 (init)
     </router-link>
   </div>
 </template>
@@ -16,13 +12,6 @@ export default {
     route: {
       type: String,
       required: true
-<<<<<<< HEAD
-=======
-    },
-    text: {
-      type: String,
-      required: true
->>>>>>> 64b84e9 (init)
     }
   }
 }
