@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # VMS-Problem-Validation-Landing-Page
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -33,3 +34,6 @@ npm run build
 ```sh
 npm run lint
 ```
+=======
+# Validation-Landing-Page
+>>>>>>> bb2d1dd (Initial commit)
