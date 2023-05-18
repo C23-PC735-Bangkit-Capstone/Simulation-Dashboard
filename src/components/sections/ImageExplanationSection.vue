@@ -2,7 +2,7 @@
   <div class="container">
     <div class="image-side">
       <div class="image-frame">
-        <img :src="imageResized" :alt="imageAlt" class="image" />
+        <img :src="imageResized" :alt="imageAlt" class="image" draggable="false" />
       </div>
     </div>
     <div class="text-side">
@@ -81,6 +81,7 @@ export default {
   background-color: #d9d9d9;
 }
 .image {
+  user-select: none;
   display: flex;
   max-width: 100%;
   max-height: 100%;

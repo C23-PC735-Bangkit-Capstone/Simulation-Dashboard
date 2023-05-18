@@ -40,5 +40,6 @@ export default {
   text-align: center;
   color: var(--vt-c-text-dark-1);
   font-size: 1rem;
+  margin-bottom: 20px;
 }
 </style>

@@ -19,11 +19,10 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-  margin-top: 20px;
   button {
-    cursor: pointer;
     min-width: 300px;
     min-height: 60px;
+    cursor: pointer;
     outline: none;
     border: none;
     border-radius: 5px;

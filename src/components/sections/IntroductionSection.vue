@@ -2,7 +2,12 @@
   <div class="container">
     <div class="image-side">
       <div class="image-frame">
-        <img alt="Yahya Aqrom" class="image" src="/IntroductionSectionYahya.png" />
+        <img
+          alt="Yahya Aqrom"
+          class="image"
+          src="/IntroductionSectionYahya.png"
+          draggable="false"
+        />
       </div>
     </div>
     <div class="text-side">

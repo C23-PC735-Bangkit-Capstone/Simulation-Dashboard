@@ -25,6 +25,6 @@ export default {
   width: 100%;
   padding: 20px;
   background-color: #f1f1f1;
-  color: #111111;
+  color: var(--vt-c-text-light-1);
 }
 </style>

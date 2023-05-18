@@ -36,8 +36,8 @@ import CTASection from '../components/sections/CTASection.vue'
       Jika Anda bersedia membantu saya dalam memvalidasi <span>8 buah</span> pernyataan,
       <span>saya akan mengirimkan:</span>
       <ol>
-        <li>Ide solusi yang terjangkau dan efektif rancangan saya,</li>
-        <li>Pulsa senilai Rp20.000 untuk 10 orang paling informatif.</li>
+        <li>Ide solusi terjangkau yang telah saya siapkan,</li>
+        <li>Pulsa Rp20.000 untuk 10 orang paling informatif.</li>
       </ol>
     </template>
   </CTASection>
