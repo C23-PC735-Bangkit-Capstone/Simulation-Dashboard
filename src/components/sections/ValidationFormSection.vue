@@ -101,7 +101,7 @@ export default {
 
       // Check if fullName exists on the server
       axios
-        .get('http://localhost:8000/' + this.validate)
+        .get('https://rich-lime-goshawk-sock.cyclic.app/' + this.validate)
         .then((response) => {
           const existingData = response.data
 
@@ -119,12 +119,18 @@ export default {
           if (isUserIDExists) {
             // If userID exists, use PUT
             axios
-              .put('http://localhost:8000/' + this.validate + '/' + existingDataIndex, {
-                userID,
-                fullName,
-                validation: this.validation,
-                additionalInfos: this.additionalInfos
-              })
+              .put(
+                'https://rich-lime-goshawk-sock.cyclic.app/' +
+                  this.validate +
+                  '/' +
+                  existingDataIndex,
+                {
+                  userID,
+                  fullName,
+                  validation: this.validation,
+                  additionalInfos: this.additionalInfos
+                }
+              )
               .then(() => {
                 console.log('Data submitted successfully')
               })
@@ -134,7 +140,7 @@ export default {
           } else {
             // If userID doesn't exist, use POST
             axios
-              .post('http://localhost:8000/' + this.validate, {
+              .post('https://rich-lime-goshawk-sock.cyclic.app/' + this.validate, {
                 userID,
                 fullName,
                 validation: this.validation,

@@ -105,7 +105,7 @@ export default {
 
       // Check if fullName exists on the server
       axios
-        .get('http://localhost:8000/identities')
+        .get('https://rich-lime-goshawk-sock.cyclic.app/identities')
         .then((response) => {
           const existingData = response.data
 
@@ -123,7 +123,7 @@ export default {
           if (isUserIDExists) {
             // If fullName exists, use PUT
             axios
-              .put('http://localhost:8000/identities/' + existingDataIndex, {
+              .put('https://rich-lime-goshawk-sock.cyclic.app/identities/' + existingDataIndex, {
                 userID,
                 submitionDate: new Date().toISOString().slice(0, 10),
                 fullName: this.fullName,
@@ -141,7 +141,7 @@ export default {
           } else {
             // If fullName doesn't exist, use POST
             axios
-              .post('http://localhost:8000/identities', {
+              .post('https://rich-lime-goshawk-sock.cyclic.app/identities', {
                 userID,
                 submitionDate: new Date().toISOString().slice(0, 10),
                 fullName: this.fullName,

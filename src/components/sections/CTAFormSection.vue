@@ -39,7 +39,7 @@ export default {
 
       // Check if fullName exists on the server
       axios
-        .get('http://localhost:8000/contacts')
+        .get('https://rich-lime-goshawk-sock.cyclic.app/contacts')
         .then((response) => {
           const existingData = response.data
 
@@ -57,7 +57,7 @@ export default {
           if (isUserIDExists) {
             // If userID exists, use PUT
             axios
-              .put('http://localhost:8000/contacts/' + existingDataIndex, {
+              .put('https://rich-lime-goshawk-sock.cyclic.app/contacts/' + existingDataIndex, {
                 userID,
                 fullName,
                 phoneNumber: this.phoneNumber
@@ -71,7 +71,7 @@ export default {
           } else {
             // If userID doesn't exist, use POST
             axios
-              .post('http://localhost:8000/contacts', {
+              .post('https://rich-lime-goshawk-sock.cyclic.app/contacts', {
                 userID,
                 fullName,
                 phoneNumber: this.phoneNumber
