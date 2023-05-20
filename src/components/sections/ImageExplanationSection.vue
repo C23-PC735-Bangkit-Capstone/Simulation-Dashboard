@@ -93,7 +93,7 @@ export default {
   align-items: center;
   flex: 50%;
   padding: 30px;
-  color: var(--vt-c-text-light-1);
+  color: #181818;
   // border: 1px solid blue;
 }
 

@@ -194,6 +194,7 @@ export default {
   width: 100%;
   padding: 75px 20px;
   background-color: #1d3932;
+  color: #fafafa;
 }
 
 .instruction {

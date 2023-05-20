@@ -80,9 +80,11 @@ export default {}
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #fafafa;
 }
 .text-intro {
   text-align: center;
   font-size: 1rem;
+  color: #fafafa;
 }
 </style>
