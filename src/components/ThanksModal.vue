@@ -32,7 +32,7 @@ export default {
 
 .modal-content {
   background-color: white;
-  color: var(--vt-c-text-light-1);
+  color: #181818;
   text-align: center;
   padding: 20px;
   border-radius: 4px;

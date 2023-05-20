@@ -38,7 +38,7 @@ export default {
 }
 .text {
   text-align: center;
-  color: var(--vt-c-text-dark-1);
+  color: #fafafa;
   font-size: 1rem;
   margin-bottom: 20px;
 }

@@ -222,7 +222,7 @@ export default {
   @media (max-width: 1024px) {
     text-align: justify;
   }
-  color: var(--vt-c-text-light-1);
+  color: #181818;
 }
 
 .form-side {
@@ -240,7 +240,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: var(--vt-c-text-light-1);
+  color: #181818;
 }
 
 .instruction {

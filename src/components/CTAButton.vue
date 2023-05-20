@@ -26,7 +26,7 @@ export default {
     outline: none;
     border: none;
     border-radius: 5px;
-    color: var(--vt-c-text-dark-1);
+    color: #fafafa;
     font-weight: 400;
     font-family: Roboto;
     font-size: 1rem;

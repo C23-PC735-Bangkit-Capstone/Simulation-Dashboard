@@ -22,7 +22,7 @@ export default {}
 .text {
   max-width: 700px;
   text-align: center;
-  color: var(--vt-c-text-light-1);
+  color: #181818;
   font-size: 1rem;
 }
 </style>

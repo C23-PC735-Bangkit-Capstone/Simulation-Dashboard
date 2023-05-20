@@ -131,14 +131,14 @@ export default {
 
 .text {
   text-align: center;
-  color: var(--vt-c-text-dark-1);
+  color: #fafafa;
   font-size: 1rem;
   margin-bottom: 20px;
 }
 
 .thanks-text {
   text-align: center;
-  color: var(--vt-c-text-dark-1);
+  color: #fafafa;
   font-size: 1.2rem;
   margin-top: 20px;
 }
@@ -171,7 +171,7 @@ export default {
   outline: none;
   border: 0;
   border-radius: 5px;
-  color: var(--vt-c-text-dark-1);
+  color: #fafafa;
   font-weight: 400;
   font-family: Roboto;
   font-size: 1rem;
