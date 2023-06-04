@@ -5,19 +5,16 @@ import VueConfetti from 'vue-confetti'
 
 // Import route components
 import App from './App.vue'
-import Introduction from './views/IntroductionView.vue'
-import Problem from './views/ProblemView.vue'
-import Thanks from './views/ThanksView.vue'
+import Simulation from './views/SimulationView.vue'
 
 // Create the router instance
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', component: Introduction },
-    { path: '/problem', component: Problem },
-    { path: '/thanks', component: Thanks }
+    { path: '/', component: Simulation },
+    { path: '/problem', component: Simulation }
   ],
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior() {
     return { top: 0 }
   }
 })

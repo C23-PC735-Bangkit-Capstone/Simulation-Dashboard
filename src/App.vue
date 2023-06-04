@@ -1,10 +1,6 @@
-<script setup>
-import MainHeader from './components/MainHeader.vue'
-</script>
+<script setup></script>
 
 <template>
-  <MainHeader></MainHeader>
-
   <router-view></router-view>
 </template>
 
