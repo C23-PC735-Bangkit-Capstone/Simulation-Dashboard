@@ -1,9 +1,42 @@
 <script setup>
+import { provide, reactive } from 'vue'
 import PageContent from '../components/PageContent.vue'
 import PageHeader from '../components/PageHeader.vue'
 import SidebarCore from '../components/SidebarCore.vue'
 import SidebarDropdown from '../components/SidebarDropdown.vue'
 import SidebarNavigation from '../components/SidebarNavigation.vue'
+
+// Create a reactive object to hold the shared data
+const sharedData = reactive({
+  user_id: '',
+  user_infos: '',
+  device_id: '',
+  pond_id: ''
+})
+
+// Provide the shared data to the child components
+provide('sharedData', sharedData)
+
+// Fetch initial data from local storage
+const storedUserId = localStorage.getItem('user_id')
+if (storedUserId) {
+  sharedData.user_id = storedUserId
+}
+
+const storedUserInfos = localStorage.getItem('user_infos')
+if (storedUserInfos) {
+  sharedData.user_infos = storedUserInfos
+}
+
+const storedDeviceId = localStorage.getItem('device_id')
+if (storedDeviceId) {
+  sharedData.device_id = storedDeviceId
+}
+
+const storedPondId = localStorage.getItem('pond_id')
+if (storedPondId) {
+  sharedData.pond_id = storedPondId
+}
 </script>
 
 <template>

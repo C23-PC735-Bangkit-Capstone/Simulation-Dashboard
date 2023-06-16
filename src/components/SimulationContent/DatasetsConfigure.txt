@@ -1,0 +1,137 @@
+<template>
+  <!-- Configure Datasets -->
+  <div class="h-24 col-span-2 bg-gray-700 h-auto">
+    <div class="p-6">
+      <div class="flex flex-row">
+        <h1 class="text-xl font-bold mb-4">Simulate Datapoints</h1>
+      </div>
+      <div class="flex flex-row gap-4">
+        <div class="flex flex-col flex-1">
+          <label class="block mb-2" for="startTimestamp">Timestamp start:</label>
+          <input
+            class="w-full px-4 py-2 border rounded"
+            type="datetime-local"
+            id="startTimestamp"
+            name="startTimestamp"
+            required
+          />
+          <label class="block mt-4 mb-2" for="interval">Timestamp interval:</label>
+          <input
+            class="w-full px-4 py-2 border rounded"
+            type="number"
+            id="interval"
+            name="interval"
+            required
+          />
+        </div>
+        <div class="flex flex-col flex-1">
+          <label class="block mb-2" for="deviceId">Device ID:</label>
+          <select class="w-full px-4 py-2 border rounded" id="deviceId" name="deviceId" required>
+            <option value="device1">Device 1</option>
+            <option value="device2">Device 2</option>
+            <option value="device3">Device 3</option>
+          </select>
+          <label class="block mt-4 mb-2" for="numberOfDatapoints"># of Datapoints:</label>
+          <input
+            class="w-full px-4 py-2 border rounded"
+            type="number"
+            id="numberOfDatapoints"
+            name="numberOfDatapoints"
+            required
+          />
+        </div>
+      </div>
+      <div class="flex flex-row">
+        <div class="flex flex-col flex-1 mt-6">
+          <input
+            class="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer"
+            type="submit"
+            value="Generate"
+            @click="generateDatapoints"
+          />
+          <div v-if="log" class="mt-4">
+            <h2 class="text-lg font-bold mb-2">Log:</h2>
+            <pre>{{ log }}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      log: ''
+    }
+  },
+  methods: {
+    generateDatapoints() {
+      const dataset = localStorage.getItem('dataset')
+      if (!dataset) {
+        console.log('No dataset uploaded.')
+        return
+      }
+
+      const rows = dataset.split('\r')
+      const trimmedRows = rows.slice(0, -1).map((row, index) => {
+        if (index === 0) {
+          return row // Keep the first row unchanged
+        }
+        return row.slice(1) // Remove the first letter from row 2 onward
+      })
+
+      trimmedRows.forEach((row, index) => {
+        this.log += `Row ${index}: ${row}\n`
+      })
+    }
+  }
+}
+</script>
+
+<!-- <script>
+export default {
+  data() {
+    return {
+      log: ''
+    }
+  },
+  methods: {
+    generateDatapoints() {
+      // Access the uploaded dataset from the handleFileUpload method
+      const dataset = localStorage.getItem('dataset')
+
+      if (!dataset) {
+        console.log('No dataset uploaded.')
+        return
+      }
+
+      const rows = dataset.split('\n')
+
+      // Start from row 2
+      const rowsToUpload = rows.slice(1)
+
+      // Make API calls to upload each row
+      rowsToUpload.forEach((row, index) => {
+        // Replace "API_ENDPOINT" with your actual API endpoint
+        fetch('API_ENDPOINT', {
+          method: 'POST',
+          body: row // Assuming your API expects the row data in the request body
+        })
+          .then((response) => response.json())
+          .then((result) => {
+            // Log the API response
+            this.log += `Row ${index + 2} uploaded successfully: ${JSON.stringify(result)}\n`
+          })
+          .catch((error) => {
+            // Log any errors
+            this.log += `Error uploading row ${index + 2}: ${error}\n`
+          })
+      })
+    }
+  }
+}
+</script> -->
+
+<style scoped></style>
