@@ -123,22 +123,18 @@ export default {
       localStorage.setItem('failureDataset', JSON.stringify(data))
     },
     uploadData() {
-      const sendMessage = () => {
-        const message = `Smart Vibration Monitoring App (${new Date().toLocaleString()})
----
-Permisi, ada indikasi kematian kincir di tambak saya. Apakah ada yang bisa membantu?
-
-https://goo.gl/maps/mMcsSVKZDydYwcbUA
-`
-        const data = new URLSearchParams()
-        data.append('target', '628976075402-1516586131@g.us')
-        data.append('message', message)
-        data.append('countryCode', '62') // optional
+      const sendMessage = async () => {
+        const message = `Permisi, ada indikasi kematian kincir di tambak saya. Apakah ada yang bisa membantu? https://goo.gl/maps/mMcsSVKZDydYwcbUA`
+        const data = {
+          target: '628976075402-1516586131@g.us',
+          message: message
+        }
 
         const options = {
           method: 'POST',
-          body: data,
+          body: JSON.stringify(data),
           headers: {
+            'Content-Type': 'application/json',
             Authorization: 'y5KS6W00S9FwI#@m58f_' // change TOKEN to your actual token
           }
         }
@@ -153,15 +149,17 @@ https://goo.gl/maps/mMcsSVKZDydYwcbUA
           })
       }
 
-      const sendLocation = () => {
-        const data = new URLSearchParams()
-        data.append('target', '628976075402-1516586131@g.us')
-        data.append('location', '-7.880415973854486, 109.98746640848763')
+      const sendLocation = async () => {
+        const data = {
+          target: '628976075402-1516586131@g.us',
+          location: '-7.983908, 112.621391'
+        }
 
         const options = {
           method: 'POST',
-          body: data,
+          body: JSON.stringify(data),
           headers: {
+            'Content-Type': 'application/json',
             Authorization: 'y5KS6W00S9FwI#@m58f_' // change TOKEN to your actual token
           }
         }

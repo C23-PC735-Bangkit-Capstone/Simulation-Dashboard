@@ -42,9 +42,14 @@
           </tbody>
         </table>
       </div>
-      <button @click="fetchChartData" class="mt-4 px-4 py-2 bg-gray-800 rounded text-white">
-        Refresh Data
-      </button>
+      <div class="flex flex-row mt-4">
+        <button @click="fetchChartData" class="mr-4 px-4 py-2 bg-gray-800 rounded text-white">
+          Refresh Data
+        </button>
+        <button @click="sendDataToML" class="px-4 py-2 bg-gray-800 rounded text-white">
+          Send Data to ML
+        </button>
+      </div>
       <div class="mt-4">
         <h2 class="font-bold">Response Log:</h2>
         <p>{{ responseLog }}</p>
@@ -115,6 +120,37 @@ export default {
         })
     }
 
+    const sendDataToML = () => {
+      const sendMessage = async () => {
+        const message = `Perhatian, saat ini kincir ${sharedData.pond_id} milikmu terindikasi rusak, segera perbaiki sebelum terlambat.`
+        const data = {
+          target: '628976075402',
+          message: message
+        }
+
+        const options = {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'y5KS6W00S9FwI#@m58f_' // change TOKEN to your actual token
+          }
+        }
+
+        return fetch('https://api.fonnte.com/send', options)
+          .then((response) => response.text())
+          .then((result) => {
+            console.log(result)
+          })
+          .catch((error) => {
+            console.error(error)
+          })
+      }
+      sendMessage().catch((error) => {
+        console.error(error)
+      })
+    }
+
     onMounted(() => {
       fetchChartData()
       setInterval(fetchChartData, 60000) // Fetch data every 60 seconds
@@ -124,7 +160,8 @@ export default {
       sharedData,
       chartData,
       responseLog,
-      fetchChartData
+      fetchChartData,
+      sendDataToML
     }
   }
 }

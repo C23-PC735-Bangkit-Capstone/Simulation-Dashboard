@@ -104,7 +104,7 @@ export default {
       console.log(requestData.data)
       console.log(requestData)
 
-      fetch(`http://127.0.0.1:8000/vibrations`, {
+      fetch(`http://34.101.86.121:9000/vibrations`, {
         method: 'POST',
         body: JSON.stringify(requestData),
         headers: {
