@@ -21,21 +21,34 @@ provide('sharedData', sharedData)
 const storedUserId = localStorage.getItem('user_id')
 if (storedUserId) {
   sharedData.user_id = storedUserId
+} else {
+  // Set initial data if localStorage data doesn't exist
+  sharedData.user_id = '10001'
+  localStorage.setItem('user_id', sharedData.user_id)
 }
 
 const storedUserInfos = localStorage.getItem('user_infos')
 if (storedUserInfos) {
   sharedData.user_infos = storedUserInfos
+} else {
+  sharedData.user_infos = 'Yahya Aqrom'
+  localStorage.setItem('user_infos', sharedData.user_infos)
 }
 
 const storedDeviceId = localStorage.getItem('device_id')
 if (storedDeviceId) {
   sharedData.device_id = storedDeviceId
+} else {
+  sharedData.device_id = '202306001'
+  localStorage.setItem('device_id', sharedData.device_id)
 }
 
 const storedPondId = localStorage.getItem('pond_id')
 if (storedPondId) {
   sharedData.pond_id = storedPondId
+} else {
+  sharedData.pond_id = '10001001'
+  localStorage.setItem('pond_id', sharedData.pond_id)
 }
 </script>
 
