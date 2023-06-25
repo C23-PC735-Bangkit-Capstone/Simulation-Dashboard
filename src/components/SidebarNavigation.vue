@@ -61,7 +61,7 @@ export default {
     const fetchDevices = () => {
       // Make an API call to fetch the devices
       axios
-        .get(`http://34.101.86.121:9000/device/${sharedData.pond_id}`)
+        .get(`http://34.101.84.62:8000/device/${sharedData.pond_id}`)
         .then((response) => {
           devices.value = response.data
           applyActiveDeviceStyle()

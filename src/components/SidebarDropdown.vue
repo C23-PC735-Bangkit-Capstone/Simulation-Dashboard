@@ -45,7 +45,7 @@ export default {
 
     const fetchPonds = () => {
       axios
-        .get(`http://34.101.86.121:9000/ponds/${user_id.value}`)
+        .get(`http://34.101.84.62:8000/ponds/${user_id.value}`)
         .then((response) => {
           ponds.value = response.data
         })

@@ -69,7 +69,7 @@ export default {
   methods: {
     fetchUsers() {
       axios
-        .get('http://34.101.86.121:9000/users') // Replaced backticks with single quotes
+        .get('http://34.101.84.62:8000/users') // Replaced backticks with single quotes
         .then((response) => {
           this.users = response.data
         })

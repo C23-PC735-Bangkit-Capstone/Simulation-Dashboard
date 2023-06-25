@@ -105,7 +105,7 @@ export default {
       }
 
       axios
-        .get(`http://34.101.86.121:9000/vibrations/${deviceID}`)
+        .get(`http://34.101.84.62:8000/vibrations/${deviceID}`)
         .then((response) => {
           chartData.value = response.data
           const latestTimestamp =
